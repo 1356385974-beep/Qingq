@@ -19,15 +19,15 @@ export function Home() {
           transition={{ duration: 0.6 }}
           className="mb-6"
         >
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-12">
             <div className="max-w-4xl">
-              <h1 className={`text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-[#1d2129]'}`}>
+              <h1 className={`text-5xl font-bold mb-4 pt-20 ${theme === 'dark' ? 'text-white' : 'text-[#1d2129]'}`}>
                 青旗助手，
                 <span className="bg-gradient-to-r from-[#00b4ff] to-[#7b61ff] bg-clip-text text-transparent">
                   轻松开会
                 </span>
               </h1>
-              <p className={`text-xl ${theme === 'dark' ? 'text-white/60' : 'text-[#86909c]'}`}>
+              <p className={`text-xl pt-6 ${theme === 'dark' ? 'text-white/60' : 'text-[#86909c]'}`}>
                 AI 会议助手，帮你把时间还给真正重要的事
               </p>
             </div>
@@ -36,7 +36,7 @@ export function Home() {
         </motion.div>
 
         {/* Quick Actions Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-3xl">
           {[
             {
               icon: Plus,
@@ -67,7 +67,7 @@ export function Home() {
               whileHover={{ y: -8, scale: 1.02 }}
               className="cursor-pointer"
             >
-              <div className={`rounded-3xl border p-8 hover:shadow-2xl transition-all relative overflow-hidden group ${
+              <div className={`rounded-3xl border p-6 hover:shadow-2xl transition-all relative overflow-hidden group ${
                 theme === 'dark'
                   ? 'bg-white/5 border-white/10'
                   : 'bg-gradient-to-br border-[#f0f2f5]'
@@ -75,7 +75,7 @@ export function Home() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.bgColor} opacity-100 group-hover:opacity-80 transition-opacity`} />
                 <div className="relative z-10">
                   {/* Tag */}
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-3">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
                       theme === 'dark'
                         ? 'bg-white/10 text-white/70'
@@ -86,17 +86,17 @@ export function Home() {
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-6 shadow-xl transition-all`} style={{ boxShadow: '0 20px 40px rgba(0, 180, 255, 0.2)' }}>
-                    <item.icon className="w-10 h-10 text-white" />
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 shadow-xl transition-all`} style={{ boxShadow: '0 16px 32px rgba(0, 180, 255, 0.2)' }}>
+                    <item.icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Content */}
-                  <h3 className={`text-2xl font-semibold mb-3 group-hover:text-[#00b4ff] transition-colors ${
+                  <h3 className={`text-xl font-semibold mb-2 group-hover:text-[#00b4ff] transition-colors ${
                     theme === 'dark' ? 'text-white' : 'text-[#1d2129]'
                   }`}>
                     {item.title}
                   </h3>
-                  <p className={`mb-6 leading-relaxed ${
+                  <p className={`mb-4 leading-relaxed text-sm ${
                     theme === 'dark' ? 'text-white/60' : 'text-[#86909c]'
                   }`}>
                     {item.desc}

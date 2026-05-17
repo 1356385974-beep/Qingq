@@ -8,7 +8,9 @@ import {
   Users,
   Zap,
   Trash2,
-  Sparkles
+  Sparkles,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react'
 import { useTheme } from '../context/ThemeContext'
 
@@ -117,8 +119,8 @@ export function Sidebar() {
                     className={`flex items-center gap-4 px-5 py-4 rounded-2xl transition-all duration-300 relative group ${
                       isActive
                         ? theme === 'dark'
-                          ? 'bg-gradient-to-r from-[#00b4ff]/20 to-[#7b61ff]/20 backdrop-blur-sm'
-                          : 'bg-gradient-to-r from-[#3b82f6]/10 via-[#8b5cf6]/10 to-[#ec4899]/10 backdrop-blur-sm shadow-lg'
+                          ? 'bg-gradient-to-r from-[#00b4ff]/20 to-[#00b4ff]/10 backdrop-blur-sm'
+                          : 'bg-gradient-to-r from-[#3b82f6]/15 to-[#60c0ff]/15 backdrop-blur-sm shadow-lg'
                         : theme === 'dark'
                         ? 'hover:bg-white/5'
                         : 'hover:bg-gradient-to-r hover:from-[#f8faff] hover:to-[#f5f3ff]'
@@ -130,8 +132,8 @@ export function Sidebar() {
                         layoutId="activeNav"
                         className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-r-full ${
                           theme === 'dark'
-                            ? 'bg-gradient-to-b from-[#00b4ff] to-[#7b61ff]'
-                            : 'bg-gradient-to-b from-[#3b82f6] via-[#8b5cf6] to-[#ec4899]'
+                            ? 'bg-gradient-to-b from-[#00b4ff] to-[#00d4ff]'
+                            : 'bg-gradient-to-b from-[#3b82f6] to-[#60c0ff]'
                         }`}
                         initial={false}
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -143,11 +145,11 @@ export function Sidebar() {
                       className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
                         isActive
                           ? theme === 'dark'
-                            ? 'bg-gradient-to-br from-[#00b4ff] to-[#7b61ff] shadow-lg shadow-[#00b4ff]/30'
-                            : 'bg-gradient-to-br from-[#3b82f6] via-[#8b5cf6] to-[#ec4899] shadow-lg shadow-[#8b5cf6]/20'
+                            ? 'bg-gradient-to-br from-[#00b4ff] to-[#00d4ff] shadow-lg shadow-[#00b4ff]/30'
+                            : 'bg-gradient-to-br from-[#3b82f6] to-[#60c0ff] shadow-lg shadow-[#3b82f6]/20'
                           : theme === 'dark'
                           ? 'bg-white/5 group-hover:bg-white/10'
-                          : 'bg-[#f1f5f9] group-hover:bg-gradient-to-br group-hover:from-[#3b82f6]/10 group-hover:via-[#8b5cf6]/10 group-hover:to-[#ec4899]/10'
+                          : 'bg-[#f1f5f9] group-hover:bg-gradient-to-br group-hover:from-[#3b82f6]/10 group-hover:to-[#60c0ff]/10'
                       }`}
                     >
                       <item.icon className={`w-5 h-5 transition-all duration-300 ${
@@ -155,14 +157,14 @@ export function Sidebar() {
                           ? 'text-white'
                           : theme === 'dark'
                           ? 'text-white/60 group-hover:text-white'
-                          : 'text-[#64748b] group-hover:text-[#8b5cf6]'
+                          : 'text-[#64748b] group-hover:text-[#3b82f6]'
                       } ${isActive ? 'scale-110' : ''}`} />
                     </motion.div>
 
                     {/* Label */}
                     <span className={`font-medium flex-1 transition-colors duration-300 ${
                       isActive
-                        ? theme === 'dark' ? 'text-white' : 'text-[#1e293b]'
+                        ? 'text-white font-semibold'
                         : theme === 'dark'
                         ? 'text-white/60 group-hover:text-white'
                         : 'text-[#64748b] group-hover:text-[#1e293b]'
@@ -175,8 +177,8 @@ export function Sidebar() {
                       <motion.div 
                         className={`w-2 h-2 rounded-full ${
                           theme === 'dark'
-                            ? 'bg-gradient-to-r from-[#00b4ff] to-[#7b61ff]'
-                            : 'bg-gradient-to-r from-[#3b82f6] to-[#8b5cf6]'
+                            ? 'bg-gradient-to-r from-[#00b4ff] to-[#00d4ff]'
+                            : 'bg-gradient-to-r from-[#3b82f6] to-[#60c0ff]'
                         }`}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
@@ -201,16 +203,16 @@ export function Sidebar() {
           <motion.div 
             className={`rounded-2xl p-4 ${
               theme === 'dark'
-                ? 'bg-gradient-to-r from-[#00b4ff]/10 to-[#7b61ff]/10 border border-white/10'
-                : 'bg-gradient-to-r from-[#3b82f6]/5 via-[#8b5cf6]/5 to-[#ec4899]/5 border border-[#e2e8f0]'
+                ? 'bg-gradient-to-r from-[#00b4ff]/10 to-[#00d4ff]/10 border border-white/10'
+                : 'bg-gradient-to-r from-[#3b82f6]/5 to-[#60c0ff]/5 border border-[#e2e8f0]'
             }`}
             whileHover={{ y: -2, scale: 1.02 }}
           >
             <div className="flex items-center gap-3">
               <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
                 theme === 'dark'
-                  ? 'bg-gradient-to-br from-[#00b4ff] to-[#7b61ff]'
-                  : 'bg-gradient-to-br from-[#3b82f6] to-[#8b5cf6]'
+                  ? 'bg-gradient-to-br from-[#00b4ff] to-[#00d4ff]'
+                  : 'bg-gradient-to-br from-[#3b82f6] to-[#60c0ff]'
               }`}>
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
