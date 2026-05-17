@@ -114,42 +114,24 @@ export function Sidebar() {
               >
                 <Link to={item.path} className="block">
                   <motion.div
-                    whileHover={{ x: 10 }}
+                    whileHover={{ x: 5 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`flex items-center gap-4 px-5 py-4 rounded-2xl transition-all duration-300 relative group ${
+                    className={`flex items-center gap-4 px-6 py-3.5 rounded-2xl transition-all duration-300 relative group ${
                       isActive
-                        ? theme === 'dark'
-                          ? 'bg-gradient-to-r from-[#00b4ff]/20 to-[#00b4ff]/10 backdrop-blur-sm'
-                          : 'bg-gradient-to-r from-[#3b82f6]/15 to-[#60c0ff]/15 backdrop-blur-sm shadow-lg'
+                        ? 'bg-[#8b5cf6] shadow-lg shadow-[#8b5cf6]/30'
                         : theme === 'dark'
                         ? 'hover:bg-white/5'
-                        : 'hover:bg-gradient-to-r hover:from-[#f8faff] hover:to-[#f5f3ff]'
+                        : 'hover:bg-white/80'
                     }`}
                   >
-                    {/* Active indicator */}
-                    {isActive && (
-                      <motion.div 
-                        layoutId="activeNav"
-                        className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-r-full ${
-                          theme === 'dark'
-                            ? 'bg-gradient-to-b from-[#00b4ff] to-[#00d4ff]'
-                            : 'bg-gradient-to-b from-[#3b82f6] to-[#60c0ff]'
-                        }`}
-                        initial={false}
-                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                      />
-                    )}
-
                     {/* Icon */}
                     <motion.div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
                         isActive
-                          ? theme === 'dark'
-                            ? 'bg-gradient-to-br from-[#00b4ff] to-[#00d4ff] shadow-lg shadow-[#00b4ff]/30'
-                            : 'bg-gradient-to-br from-[#3b82f6] to-[#60c0ff] shadow-lg shadow-[#3b82f6]/20'
+                          ? 'bg-white/20'
                           : theme === 'dark'
                           ? 'bg-white/5 group-hover:bg-white/10'
-                          : 'bg-[#f1f5f9] group-hover:bg-gradient-to-br group-hover:from-[#3b82f6]/10 group-hover:to-[#60c0ff]/10'
+                          : 'bg-[#f1f5f9] group-hover:bg-[#e2e8f0]'
                       }`}
                     >
                       <item.icon className={`w-5 h-5 transition-all duration-300 ${
@@ -157,34 +139,20 @@ export function Sidebar() {
                           ? 'text-white'
                           : theme === 'dark'
                           ? 'text-white/60 group-hover:text-white'
-                          : 'text-[#64748b] group-hover:text-[#3b82f6]'
-                      } ${isActive ? 'scale-110' : ''}`} />
+                          : 'text-[#64748b] group-hover:text-[#8b5cf6]'
+                      }`} />
                     </motion.div>
 
                     {/* Label */}
                     <span className={`font-medium flex-1 transition-colors duration-300 ${
                       isActive
-                        ? 'text-white font-semibold'
+                        ? 'text-white'
                         : theme === 'dark'
                         ? 'text-white/60 group-hover:text-white'
                         : 'text-[#64748b] group-hover:text-[#1e293b]'
                     }`}>
                       {item.label}
                     </span>
-
-                    {/* Active dot */}
-                    {isActive && (
-                      <motion.div 
-                        className={`w-2 h-2 rounded-full ${
-                          theme === 'dark'
-                            ? 'bg-gradient-to-r from-[#00b4ff] to-[#00d4ff]'
-                            : 'bg-gradient-to-r from-[#3b82f6] to-[#60c0ff]'
-                        }`}
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ type: 'spring', stiffness: 200, damping: 10 }}
-                      />
-                    )}
                   </motion.div>
                 </Link>
               </motion.div>
